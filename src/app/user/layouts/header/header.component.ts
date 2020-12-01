@@ -12,20 +12,12 @@ export class HeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
   listItem: number = 0;
-  // totaItem: number = 0;
-  // cartItem: CartItem[] = this.cs.getItem;
 
   ngOnInit(): void {
     this.cs.list$.subscribe((list) => {
       this.listItem = this.cs.getListItems;
-      // this.totaItem = this.cs.getTotal;
     });
   }
-
-  // onRemove(event: any, item: CartItem) {
-  //   event.stopPropagation();
-  //   this.cs.removeItem(item);
-  // }
 
   public onToggleSidenav() {
     this.sidenavToggle.emit();

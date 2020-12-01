@@ -10,7 +10,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { FormService } from './services/form.service';
 import { HttpService } from './services/http.service';
-import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [FocusDirective],
@@ -23,7 +22,6 @@ import { ChartsModule } from 'ng2-charts';
     MaterialModule,
     NgxDropzoneModule,
     SimpleNotificationsModule.forRoot(),
-    ChartsModule,
   ],
   exports: [
     FormsModule,
@@ -34,7 +32,6 @@ import { ChartsModule } from 'ng2-charts';
     NgxDropzoneModule,
     FocusDirective,
     SimpleNotificationsModule,
-    ChartsModule,
   ],
   providers: [FormService, HttpService],
 })

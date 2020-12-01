@@ -345,8 +345,6 @@ const onUpdateOrder = async (req, res) => {
       logistic_track: req.body.logistic_track,
     };
 
-    console.log(bodyItem);
-
     const result = await sequelize.transaction(async (t) => {
       await dbUser.order.update(bodyItem, {
         where: { id_order },

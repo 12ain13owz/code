@@ -25,7 +25,6 @@ export class CheckOutComponent implements OnInit {
     private http: HttpService
   ) {
     this.createShoppingForm();
-    this.setForm();
   }
 
   @ViewChild('fileInput') fileInput: ElementRef;
@@ -95,20 +94,6 @@ export class CheckOutComponent implements OnInit {
     this.receipt.setValue(this.getReceiptName);
   }
 
-  // uploadFileEvt(imgFile: any) {
-  //   if (imgFile.target.files && imgFile.target.files[0]) {
-  //     const file: File = imgFile.target.files[0];
-  //     this.image.setValue(file ? file.name : '');
-  //     this.sform.patchValue({
-  //       fileSource: file,
-  //     });
-  //     this.fileInput.nativeElement.value = '';
-  //   } else {
-  //     this.image.setValue('');
-  //     this.fileSource.setValue('');
-  //   }
-  // }
-
   Add(item: CartItem) {
     const stock = item.detail.stock;
     if (this.cs.getQuantity(item) >= stock) {
@@ -155,14 +140,6 @@ export class CheckOutComponent implements OnInit {
       remark: [''],
       receipt: ['', Validators.required],
     });
-  }
-
-  setForm() {
-    this.fullname.setValue('ไพบูรณ์ วิธานธำรง');
-    this.address1.setValue('697 ซ.โรงเจ ถ.เทอดไท 21');
-    this.address2.setValue('แขวงบางยี่เรือ, เขตธนบุรี, กรุงเทพมหานคร, 10600');
-    this.email.setValue('touchfn@gmail.com');
-    this.phone.setValue('0862507512');
   }
 
   set setFormData(formData: FormData) {

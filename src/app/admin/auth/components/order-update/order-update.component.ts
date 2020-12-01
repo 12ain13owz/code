@@ -61,7 +61,6 @@ export class OrderUpdateComponent implements OnInit {
       .then((result) => {
         this.data = result;
         this.setOrder = result.order;
-        console.log(result.list);
         this.dataSource = new MatTableDataSource(result.list);
 
         for (const key in result.track) {
@@ -69,7 +68,6 @@ export class OrderUpdateComponent implements OnInit {
           this.status.push(result.track[key].status);
           this.date.push(result.track[key].date);
         }
-        console.log(this.date);
       })
       .catch((resError) => {
         this.fs.onNotifier(
